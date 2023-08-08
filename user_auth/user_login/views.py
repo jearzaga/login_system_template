@@ -1,7 +1,7 @@
 from django.shortcuts import render, HttpResponse
 
 # Create your views here.
-def index(request):
+def home(request):
     return render(request, 'user_login/index.html')
 
 def signup(request):
