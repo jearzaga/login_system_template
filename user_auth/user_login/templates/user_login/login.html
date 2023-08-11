@@ -2,4 +2,52 @@
 
 {% block content %}
     
+<section class="">
+    <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: #DDE6ED">
+        <div class="container">
+            <div class="row gx-lg-5 align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h1 class="my-5 display-3 fw-bold ls-tight">
+                        Turn your ideas <br />
+                        <span class="text-primary">into reality</span>
+                    </h1>
+                    <p style="color: #606C5D">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Eveniet, itaque accusantium odio, soluta, corrupti aliquam
+                        quibusdam tempora at cupiditate quis eum maiores libero
+                        veritatis? Dicta facilis sint aliquid ipsum atque?
+                    </p>
+                </div>
+
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="card">
+                        <div class="card-body py-5 px-md-5">
+                            <form method="post">
+                                {% csrf_token %}
+                                <!-- Email input -->
+                                <div class="form-floating mb-3">
+                                    {{ form.email }}
+                                    <label for="{{ form.email.id_for_label }}">Email</label>
+                                </div>
+
+                                <!-- Password input -->
+                                <div class="form-floating mb-3">
+                                    {{ form.password }}
+                                    <label for="{{ form.password.id_for_label }}">Password</label>
+                                </div>
+                                
+                                <!-- Submit button -->
+                                <button type="submit" class="btn btn-dark btn-block mb-4">
+                                    Log in
+                                </button>
+                                <!-- Register buttons -->
+                                <p>Don't have an account? <a href="{% url 'user_login:signup' %}">Sign up here</a></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+</section>
 {% endblock  %}

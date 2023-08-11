@@ -39,7 +39,7 @@ def login(request):
             
             if user:
                 request.session['user_id'] = user.id
-                return HttpResponse("User logged in successfully")
+                return render(request, 'user_login/home.html')
             else:
                 return HttpResponse("Invalid Credentials")
         else:
@@ -67,7 +67,7 @@ def forgot_password(request):
                     return HttpResponse("User does not exist")
             else:
                 return HttpResponse("Password and Confirm Password does not match")
-        else:
+        else:  
             return HttpResponse("Invalid Form")
     else:
         form = ForgotPasswordForm()
